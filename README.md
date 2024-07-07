@@ -25,17 +25,17 @@ Welcome to the **Stock Market Trend Analyzer** - a powerful mobile application b
 ## 📱 Screenshots
 
 ### Home Screen 
-![Top Gainers](assets/images/sc2.jpg)
+![Top Gainers](./app/assets/images/sc2.jpg)
 
-!![Top Losers](assets/images/sc1.jpg)
+!![Top Losers](./app/assets/images/sc1.jpg)
 
 ### Details Screen
-![1 Month ](assets/images/sc3.jpg)
-![6 Month ](assets/images/sc4.jpg)
-![1 Year ](assets/images/sc5.jpg)
+![1 Month ](./app/assets/images/sc3.jpg)
+![6 Month ](./app/assets/images/sc4.jpg)
+![1 Year ](./app/assets/images/sc5.jpg)
 
 ### Analysis Screen
-![Analysis Screen](assets/screenshots/analysis.png)
+![Analysis Screen](./app/assets/screenshots/analysis.png)
 
 
 ## 🌟 Get Started
