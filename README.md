@@ -34,8 +34,6 @@ Welcome to the **Stock Market Trend Analyzer** - a powerful mobile application b
 ![6 Month ](./app/assets/images/sc4.jpg)
 ![1 Year ](./app/assets/images/sc5.jpg)
 
-### Analysis Screen
-![Analysis Screen](./app/assets/screenshots/analysis.png)
 
 
 ## 🌟 Get Started
