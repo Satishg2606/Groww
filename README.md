@@ -30,4 +30,4 @@ Welcome to the **Stock Market Trend Analyzer** - a powerful mobile application b
 
 1. **Clone the repository**: 
    ```sh
-   git clone https://github.com/yourusername/stock-market-trend-analyzer.git
+   git clone https://github.com/Satishg2606/Groww.git
