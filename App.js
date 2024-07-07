@@ -15,8 +15,8 @@ import { NavigationContainer } from '@react-navigation/native';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ExploreStocks from './app/component/exploreStocksScreen.js';
-import StockDetails from './app/component/stockDetailsScreen.js';
 import { ALPHA_VANTAGE_API_KEY } from '@env';
+import StockDetails from './app/component/stockDetailsScreen.js';
 
 // const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
