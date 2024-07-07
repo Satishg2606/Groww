@@ -15,6 +15,8 @@ const getCurrentDate = () => {
   return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 };
 
+
+//fetching Company name & logo .
 const fetchCompanyInfo = async (ticker) => {
   try {
     const response = await axios.get(FINHUB_API_URL, {
@@ -30,6 +32,7 @@ const fetchCompanyInfo = async (ticker) => {
   }
 };
 
+//Adding Name and logo into existing data
 const addCompanyInfo = async (stocks) => {
   let companyData = [];
   return await Promise.all(
@@ -46,24 +49,29 @@ const addCompanyInfo = async (stocks) => {
   );
   
 };
+
+
+// core Funtion.
 const getStocksData = async () => {
   try {
     const cachedData = await getCachedData(CACHE_KEY);
     const cacheTime = await getCachedData(CACHE_TIME_KEY);
     const currentDate = getCurrentDate();
 
+    //if todays cache exists return it 
     if (cachedData && cacheTime === currentDate) {
         console.log("Cache data in use-------");
-        // console.log(cachedData);
       return JSON.parse(cachedData);
     }
 
+    //tracks api calls count
     const apiCallCount = parseInt(await getCachedData(API_CALLS_KEY + currentDate)) || 0;
     if (apiCallCount >= MAX_API_CALLS ) {
       console.warn('API call limit reached for today');
       return cachedData ? JSON.parse(cachedData) : null;
     }
 
+    //fetch Top Gainers and losers.
     const response = await axios.get(API_URL, {
       params: {
         function: 'TOP_GAINERS_LOSERS',
@@ -83,13 +91,10 @@ const getStocksData = async () => {
       top_gainers: await addCompanyInfo(response.data.top_gainers),
       top_losers: await addCompanyInfo(response.data.top_losers),
     };
-    console.log(modifiedData);
+    // console.log(modifiedData);
     await storeDataInCache(API_CALLS_KEY + currentDate, (apiCallCount + 1).toString());
     await storeDataInCache(CACHE_KEY ,JSON.stringify(modifiedData));
     await storeDataInCache(CACHE_TIME_KEY ,CACHE_TIME_KEY);
-    // await AsyncStorage.setItem(API_CALLS_KEY + currentDate, (apiCallCount + 1).toString());
-    // await AsyncStorage.setItem(CACHE_KEY, JSON.stringify(modifiedData));
-    // await AsyncStorage.setItem(CACHE_TIME_KEY, CACHE_TIME_KEY);
 
     return modifiedData;
   } catch (error) {

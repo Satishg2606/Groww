@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import getStockData from '../controllers/getAllStocksDataController.js';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Loader from "../utils/loading.js"
 
 function navigateToDetails({navigation, item}) {
   navigation.navigate('StockDetails', {data: item});
@@ -20,6 +21,8 @@ const ExploreStocks = ({navigation}) => {
   const [loading, setLoading] = useState(true);
   const [gainers, setGainers] = useState(true);
   const arrow = gainers ? '▲' : '▼';
+  
+  //fetching stocks data
   useEffect(() => {
     try{
       const getData = async () => {
@@ -38,13 +41,10 @@ const ExploreStocks = ({navigation}) => {
   }, []);
 
   if (loading) {
-    return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#0000ff" />
-      </View>
-    );
+    return <Loader />
   }
 
+  //Flatlist stucture 
   const renderItem = ({item}) => (
     <TouchableOpacity
       style={styles.stockContainer}
