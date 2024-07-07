@@ -114,5 +114,5 @@ dependencies {
         implementation jscFlavor
     }
 }
-
+//com/android/tools/lint/model/LintModelSeverity has been compiled by a more recent version of the Java Runtime ( class file version 61.0) , this version of the Java Runtime only recognizes the file versions up to 55.0
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
