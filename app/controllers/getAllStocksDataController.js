@@ -79,7 +79,7 @@ const getStocksData = async () => {
       },
       headers: { 'User-Agent': 'request' },
     });
-    // console.log(response);
+    console.log(response);
     if(response?.data?.Information){
         console.log("No Data Available");
         return null;

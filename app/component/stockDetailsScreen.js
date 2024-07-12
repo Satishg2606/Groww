@@ -27,7 +27,7 @@ const StockDetails = ({ navigation, route }) => {
 
   //fetching the company data.  
   useEffect(() => {
-    const getData = async () => {
+    try{const getData = async () => {
       if (symbol) {
         const result = await fetchCompanyInfo(symbol);
         setCompanyData(result);
@@ -36,7 +36,10 @@ const StockDetails = ({ navigation, route }) => {
         setLoading(false);
       }
     };
-    getData();
+    getData();}
+    catch(error){
+      console.log(error);
+    }
   }, [symbol]);
   
   //show loader till All the data is fetched
@@ -106,6 +109,7 @@ const StockDetails = ({ navigation, route }) => {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Details Screen</Text>
+        
         <Text style={styles.search}>Search</Text>
       </View>
       <View style={styles.companyContainer}>
