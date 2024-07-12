@@ -24,10 +24,20 @@ Welcome to the **Stock Market Trend Analyzer** - a powerful mobile application b
 
 ## 📱 Screenshots
 
-(Include some appealing screenshots of your app here)
+### Home Screen 
+![Top Gainers](./app/assets/images/sc2.jpg)
+
+!![Top Losers](./app/assets/images/sc1.jpg)
+
+### Details Screen
+![1 Month ](./app/assets/images/sc3.jpg)
+![6 Month ](./app/assets/images/sc4.jpg)
+![1 Year ](./app/assets/images/sc5.jpg)
+
+
 
 ## 🌟 Get Started
 
 1. **Clone the repository**: 
    ```sh
-   git clone https://github.com/yourusername/stock-market-trend-analyzer.git
+   git clone https://github.com/Satishg2606/Groww.git

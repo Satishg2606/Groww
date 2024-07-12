@@ -109,7 +109,6 @@ const StockDetails = ({ navigation, route }) => {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Details Screen</Text>
-        
         <Text style={styles.search}>Search</Text>
       </View>
       <View style={styles.companyContainer}>
